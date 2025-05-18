@@ -1,0 +1,44 @@
+﻿@using ClinicMVC.Models
+@model List<Doctor>;
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Doctors </h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Doctor</th>
+                            <th>Department Title</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (Doctor doctor in Model)
+                        {
+                            <tr>
+                                <td>@doctor.Id</td>
+                                <td>@doctor.Name</td>
+                                <td>@doctor.Department?.Title</td>
+                                <td><a class="btn btn-danger" asp-area="Admin" asp-controller="Doctor" asp-action="Delete" asp-route-id="@doctor.Id">Delete</a></td>
+                                <td><a class="btn btn-warning" asp-area="Admin" asp-controller="Doctor" asp-action="Update" asp-route-id="@doctor.Id">Update</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+            </div>
+<!-- End of Main Content -->

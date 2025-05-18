@@ -1,9 +1,10 @@
 ﻿using ClinicMVC.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ClinicMVC.Context
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext:IdentityDbContext<AppUser>
     {
         public DbSet<Doctor> Doctors {  get; set; }
         public DbSet<Department> Departments { get; set; }

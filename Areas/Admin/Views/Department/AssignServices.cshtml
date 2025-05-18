@@ -1,0 +1,14 @@
+﻿@using ClinicMVC.Areas.ViewModels.DepartmentVMs
+@model BatchAssignVM;
+
+<h2>Assign Doctors to Department</h2>
+<form method="post">
+    <input type="hidden" asp-for="DepartmentId"/>
+    <div class="form-group">
+        <select asp-items="Model.AllServices" asp-for="DoctorIds" class="form-select" multiple>
+        </select>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
